@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <form name="myForm">
+            名前：<input type="text" name="myName"><br>
+            メールアドレス：<input type="text" name="myAdo"><br>
+
+            年齢：
+            <input type="radio" name="radioB" value="age20" />２０代
+            <input type="radio" name="radioB" value="age30" />３０代
+            <input type="radio" name="radioB" value="age40" />４０代<br>
+            <br>
+
+            <label>普段使っているスマホは？</label><br/>
+            <input type="checkbox" name="os" value="ipone" />iPone
+            <input type="checkbox" name="os" value="android" />Android
+            <input type="checkbox" name="os" value="garake" />ガラケー
+            <input type="checkbox" name="os" value="sonota" />その他
+
+        </form>
+
+        <button id="btn">実行</button>
+
+        <script>
+            const btn = document.getElementById('btn');
+
+            btn.addEventListener('click', () => {
+                const form = document.forms.myForm;
+
+                console.log('名前 : ' + form.myName.value);
+                console.log('アドレス : ' + form.myAdo.value);
+
+                console.log('年代 ＝ ' + form.radioB.value);
+
+                form.os.forEach(item => {
+
+                if(item.checked) console.log('使っているスマホ : ' + item.value);
+                
+                })
+
+            });
+        </script>
+
+        <p></p>
+        <p></p>
+        <p></p>
+<!-- ------------------------------------------------------------------------------------------- -->
+
+        <textarea id="text" cols="50" rows="7"></textarea>
+        <p id="count">0文字</p>
+
+        <script>
+            const text = document.getElementById("text");
+            const count = document.getElementById("count");
+
+            text.addEventListener("keyup", () => {
+                const inputText = text.value.replace(/[\n|\s]/g, "");
+
+                
+
+                count.textContent = inputText.length + '文字';
+            });
+        </script>
+
+
+<p></p>
+<p></p>
+<p></p>
+<!-- ------------------------------------------------------------------------------------------- -->
+        
+
+    </body>
+</body>
+</html>
